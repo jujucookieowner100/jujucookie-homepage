@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>쥬쥬쿠키 | 제주 서귀포 남원 베이킹 스튜디오</title>
+<meta name="description" content="제주 서귀포시 남원읍 베이킹 스튜디오 쥬쥬쿠키. 원데이 베이킹 클래스, 어린이·성인 클래스, 단체·출장 클래스를 운영합니다.">
+<meta property="og:title" content="쥬쥬쿠키 · 제주 남원 베이킹 스튜디오">
+<meta property="og:description" content="베이킹으로 행복을 나누는 곳. 원데이·어린이·성인·단체·출장 클래스">
+<meta property="og:image" content="images/menu/cookie.jpg">
+<meta name="theme-color" content="#F7E3A8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8E7; --butter:#F7E3A8; --yellow:#FFD45C; --honey:#F2B33D;
+    --brown:#5A2A1A; --cocoa:#8B4A2B; --text:#4A2C20; --muted:#8A6B5B;
+    --white:#fff; --pink:#FFD9D2;
+    --radius:22px; --shadow:0 10px 30px rgba(90,42,26,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:64px}
+  body{font-family:"Gowun Dodum",system-ui,sans-serif;color:var(--text);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,.jua{font-family:"Jua",sans-serif;font-weight:400;color:var(--brown)}
+  .script{font-family:"Dancing Script",cursive;color:var(--cocoa)}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,248,231,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(90,42,26,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{display:flex;align-items:center;gap:8px;font-family:"Jua";font-size:1.35rem;color:var(--brown)}
+  .logo-dot{width:32px;height:32px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-size:1.05rem;box-shadow:inset 0 -3px 0 var(--honey)}
+  .menu{display:flex;gap:22px;font-size:.95rem}
+  .menu a:hover{color:var(--cocoa)}
+  .nav-cta{display:none}
+  @media(max-width:760px){.menu{display:none}.nav-cta{display:inline-flex}}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-family:"Jua";font-size:1.05rem;transition:transform .15s, box-shadow .15s;cursor:pointer;border:0}
+  .btn:active{transform:scale(.97)}
+  .btn-main{background:var(--brown);color:var(--butter);box-shadow:0 6px 0 #3b1a0f}
+  .btn-main:hover{transform:translateY(-2px)}
+  .btn-sub{background:var(--white);color:var(--brown);border:2px solid var(--brown)}
+  .btn-sm{padding:8px 16px;font-size:.92rem;box-shadow:none}
+
+  /* placeholder photos — 같은 이름의 사진을 images/ 폴더에 올리면 자동 교체 */
+  .ph{position:relative;overflow:hidden;border-radius:var(--radius);background:
+      radial-gradient(circle at 25% 30%,rgba(255,255,255,.7) 0 12%,transparent 13%),
+      radial-gradient(circle at 75% 70%,rgba(255,255,255,.5) 0 9%,transparent 10%),
+      linear-gradient(135deg,var(--butter),var(--yellow));
+    display:grid;place-items:center;color:var(--cocoa);text-align:center}
+  .ph::before{content:attr(data-emoji);font-size:3rem;line-height:1}
+  .ph::after{content:attr(data-label);position:absolute;bottom:10px;left:0;right:0;font-size:.78rem;opacity:.75}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+
+  /* hero */
+  .hero{padding:48px 0 64px;background:
+      radial-gradient(ellipse at top right,rgba(255,212,92,.45),transparent 60%),
+      radial-gradient(ellipse at bottom left,rgba(255,217,210,.5),transparent 55%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .badge{display:inline-block;background:var(--white);border:1.5px dashed var(--honey);color:var(--cocoa);padding:6px 14px;border-radius:999px;font-size:.88rem;margin-bottom:16px}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.25;margin-bottom:6px}
+  .hero h1 em{font-style:normal;background:linear-gradient(transparent 60%,var(--yellow) 60%)}
+  .hero .script{font-size:1.6rem;margin-bottom:14px}
+  .hero p.lead{font-size:1.08rem;color:var(--muted);margin-bottom:26px}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-photo{aspect-ratio:4/5;border:8px solid var(--white);box-shadow:var(--shadow);transform:rotate(2deg)}
+  .hero-photo-wrap{position:relative}
+  .sticker{position:absolute;z-index:2;background:var(--yellow);color:var(--brown);font-family:"Jua";width:96px;height:96px;border-radius:50%;display:grid;place-items:center;text-align:center;line-height:1.2;font-size:.95rem;box-shadow:var(--shadow);left:-18px;bottom:24px;transform:rotate(-10deg);border:3px dashed var(--white);outline:3px solid var(--yellow)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .chip{background:var(--white);padding:6px 12px;border-radius:10px;font-size:.88rem;box-shadow:0 2px 0 rgba(90,42,26,.08)}
+  @media(max-width:760px){
+    .hero{padding:28px 0 48px}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .hero-photo-wrap{order:-1;max-width:340px;margin:0 auto;width:86%}
+    .hero-photo{aspect-ratio:1/1}
+    .hero-btns .btn{flex:1}
+  }
+
+  /* section */
+  section{padding:72px 0}
+  .sec-head{text-align:center;margin-bottom:36px}
+  .sec-head .script{font-size:1.5rem;display:block}
+  .sec-head h2{font-size:clamp(1.7rem,4.5vw,2.3rem)}
+  .sec-head p{color:var(--muted);margin-top:6px}
+  .line{width:64px;height:4px;border-radius:4px;background:var(--yellow);margin:12px auto 0}
+  @media(max-width:760px){section{padding:56px 0}}
+
+  /* class types */
+  .types{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:56px}
+  .type{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .type .ph{aspect-ratio:16/10;margin-bottom:16px;border-radius:16px}
+  .type h3{font-size:1.3rem;margin-bottom:4px}
+  .type .tag{display:inline-block;font-size:.8rem;background:var(--butter);padding:2px 10px;border-radius:999px;margin-bottom:8px;color:var(--cocoa)}
+  .type ul{list-style:none;font-size:.95rem;color:var(--muted)}
+  .type li::before{content:"🍪 ";}
+  @media(max-width:860px){.types{grid-template-columns:1fr}}
+  @media(min-width:520px) and (max-width:860px){.types{grid-template-columns:1fr 1fr}.types .type:last-child{grid-column:span 2}}
+
+  /* menu */
+  .menu-box{background:var(--butter);border-radius:28px;padding:28px 20px}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px;scrollbar-width:none;justify-content:center}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;padding:9px 18px;border-radius:999px;background:var(--white);border:0;font-family:"Jua";font-size:1rem;color:var(--brown);cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--brown);color:var(--butter)}
+  @media(max-width:600px){.tabs{justify-content:flex-start}}
+  .cat-desc{text-align:center;color:var(--cocoa);margin-bottom:18px}
+  .items{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .item{background:var(--cream);border-radius:16px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .item .name{font-size:1rem}
+  .item .new{display:inline-block;font-family:"Dancing Script";font-size:.85rem;color:#E0662B;background:#FFE08A;border-radius:999px;padding:0 8px;margin-left:4px;vertical-align:middle}
+  .item .price{flex:0 0 auto;background:var(--brown);color:var(--white);font-family:"Jua";border-radius:999px;padding:3px 12px;font-size:.92rem}
+  @media(max-width:860px){.items{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.items{grid-template-columns:1fr}}
+  .menu-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:20px;font-size:.88rem;color:var(--muted)}
+
+  /* lightbox */
+  dialog{border:0;border-radius:18px;padding:0;max-width:min(560px,94vw);background:var(--butter)}
+  dialog::backdrop{background:rgba(60,30,15,.6)}
+  dialog img{width:100%}
+  dialog button{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:0;background:var(--brown);color:var(--white);font-size:1.2rem;cursor:pointer}
+
+  /* group */
+  .group{background:var(--white)}
+  .group-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  .group-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .group-photos .ph{aspect-ratio:1/1}
+  .group-photos .ph:first-child{grid-column:span 2;aspect-ratio:16/9}
+  .targets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 24px}
+  .target{background:var(--cream);border-radius:14px;padding:12px 14px;font-size:.95rem}
+  .target b{display:block;font-family:"Jua";font-weight:400;color:var(--brown);font-size:1.05rem}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:10px;margin-bottom:24px}
+  .steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start}
+  .steps li::before{content:counter(s);flex:0 0 28px;height:28px;border-radius:50%;background:var(--yellow);color:var(--brown);font-family:"Jua";display:grid;place-items:center}
+  @media(max-width:860px){.group-grid{grid-template-columns:1fr}}
+
+  /* location */
+  .loc-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+  .map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:320px;background:var(--butter)}
+  .map iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+  .info{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .info dl{display:grid;gap:14px}
+  .info dt{font-family:"Jua";color:var(--brown)}
+  .info dd{color:var(--muted)}
+  .map-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  @media(max-width:860px){.loc-grid{grid-template-columns:1fr}}
+
+  /* contact */
+  .contact{background:linear-gradient(180deg,var(--cream),var(--butter))}
+  .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:0 auto}
+  .ccard{background:var(--white);border-radius:var(--radius);padding:26px 22px;text-align:center;box-shadow:var(--shadow);display:block;transition:transform .15s}
+  .ccard:hover{transform:translateY(-4px)}
+  .ccard .ico{font-size:2.4rem}
+  .ccard h3{font-size:1.35rem;margin:6px 0 2px}
+  .ccard p{color:var(--muted);font-size:.95rem}
+  .ccard .go{display:inline-block;margin-top:12px;font-family:"Jua";color:var(--brown);background:var(--yellow);padding:8px 18px;border-radius:999px}
+  .checklist{max-width:760px;margin:24px auto 0;background:rgba(255,255,255,.65);border:2px dashed var(--honey);border-radius:var(--radius);padding:20px 22px}
+  .checklist h3{font-size:1.1rem;margin-bottom:8px}
+  .checklist ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:.95rem}
+  .checklist li::before{content:"✔ ";color:var(--honey)}
+  .copy-btn{margin-top:14px}
+  @media(max-width:600px){.contact-cards,.checklist ul{grid-template-columns:1fr}}
+
+  footer{background:var(--brown);color:var(--butter);padding:36px 0 110px;text-align:center;font-size:.9rem}
+  footer .logo{justify-content:center;color:var(--butter);margin-bottom:8px}
+  footer p{opacity:.8}
+  @media(min-width:761px){footer{padding-bottom:36px}}
+
+  /* mobile bottom bar */
+  .bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,248,231,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(90,42,26,.1)}
+  .bottom-bar .btn{flex:1;padding:12px;font-size:1rem}
+  @media(max-width:760px){.bottom-bar{display:flex}}
+
+  .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--brown);color:var(--white);padding:10px 18px;border-radius:999px;opacity:0;transition:.25s;z-index:70;pointer-events:none;font-size:.92rem}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><span class="logo-dot">🍪</span>쥬쥬쿠키</a>
+    <nav class="menu">
+      <a href="#classes">클래스 안내</a>
+      <a href="#group">단체·출장</a>
+      <a href="#location">오시는 길</a>
+      <a href="#contact">예약 문의</a>
+    </nav>
+    <a href="#contact" class="btn btn-main btn-sm nav-cta">예약 문의</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ① 첫 화면 -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">🍊 제주 서귀포 남원 · 베이킹 스튜디오</span>
+      <h1>내 손으로 굽는<br><em>달콤한 제주의 하루</em></h1>
+      <div class="script">Juju Cookie Baking Studio</div>
+      <p class="lead">쥬쥬쿠키는 베이킹으로 행복을 나누는 곳이에요.<br>처음 오븐을 여는 아이부터 취미를 찾는 어른까지,<br>버터 향 가득한 시간을 함께 만들어요.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-main">🧁 예약 문의하기</a>
+        <a href="#classes" class="btn btn-sub">클래스 둘러보기</a>
+      </div>
+      <div class="chips">
+        <span class="chip">🧒 어린이 클래스</span>
+        <span class="chip">👩‍🍳 성인 클래스</span>
+        <span class="chip">🎈 원데이 클래스</span>
+        <span class="chip">🚐 단체·출장</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <!-- 사진 교체: images/hero.jpg 파일을 올리면 자동으로 바뀝니다 -->
+      <div class="ph hero-photo" data-emoji="🍪" data-label="대표 사진 (images/hero.jpg)">
+        <img src="images/hero.jpg" alt="쥬쥬쿠키 베이킹 클래스" onerror="this.remove()">
+      </div>
+      <div class="sticker">메뉴<br>45가지+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ② 클래스 안내 -->
+<section id="classes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">Baking Class</span>
+      <h2>클래스 안내</h2>
+      <p>원하는 메뉴를 고르고, 함께 굽고, 예쁘게 포장해서 가져가요.</p>
+      <div class="line"></div>
+    </div>
+
+    <div class="types">
+      <article class="type">
+        <div class="ph" data-emoji="🎈" data-label="images/class-oneday.jpg"><img src="images/class-oneday.jpg" alt="원데이 클래스" onerror="this.remove()"></div>
+        <span class="tag">누구나 · 1회 완성</span>
+        <h3>원데이 베이킹 클래스</h3>
+        <ul>
+          <li>제주 여행 중 특별한 추억 만들기</li>
+          <li>커플·가족·친구와 함께</li>
+          <li>완성품 포장해서 가져가기</li>
+        </ul>
+      </article>
+      <article class="type">
+        <div class="ph" data-emoji="🧒" data-label="images/class-kids.jpg"><img src="images/class-kids.jpg" alt="어린이 클래스" onerror="this.remove()"></div>
+        <span class="tag">유아 · 초등</span>
+        <h3>어린이 클래스</h3>
+        <ul>
+          <li>캐릭터 쿠키, 거북이빵 등 귀여운 메뉴</li>
+          <li>반죽·모양·데코로 오감 놀이</li>
+          <li>생일파티·방학 특강 가능</li>
+        </ul>
+      </article>
+      <article class="type">
+        <div class="ph" data-emoji="👩‍🍳" data-label="images/class-adult.jpg"><img src="images/class-adult.jpg" alt="성인 클래스" onerror="this.remove()"></div>
+        <span class="tag">성인 · 취미 · 동아리</span>
+        <h3>성인 클래스</h3>
+        <ul>
+          <li>스콘, 휘낭시에, 케이크 등 정통 메뉴</li>
+          <li>집에서 다시 만들 수 있는 레시피</li>
+          <li>정기 모임형(동아리) 클래스</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="sec-head" style="margin-bottom:20px">
+      <span class="script">Menu</span>
+      <h2>체험 메뉴</h2>
+      <p>탭을 눌러 카테고리별 메뉴와 가격을 확인하세요.</p>
+    </div>
+
+    <div class="menu-box">
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <p class="cat-desc" id="catDesc"></p>
+      <div class="items" id="items"></div>
+      <div class="menu-foot">
+        <span>* 가격은 메뉴 1세트(표기 수량) 기준이에요. 인원·시간은 문의 주세요.</span>
+        <button class="btn btn-sub btn-sm" id="viewMenu">📋 메뉴판 사진 보기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog id="menuDialog">
+  <button aria-label="닫기" onclick="this.closest('dialog').close()">✕</button>
+  <img id="menuImg" alt="메뉴판">
+</dialog>
+
+<!-- ③ 단체·출장 클래스 -->
+<section id="group" class="group">
+  <div class="wrap group-grid">
+    <div class="group-photos">
+      <div class="ph" data-emoji="🚐" data-label="images/group-1.jpg"><img src="images/group-1.jpg" alt="출장 클래스 현장" onerror="this.remove()"></div>
+      <div class="ph" data-emoji="🏫" data-label="images/group-2.jpg"><img src="images/group-2.jpg" alt="단체 클래스" onerror="this.remove()"></div>
+      <div class="ph" data-emoji="🎁" data-label="images/group-3.jpg"><img src="images/group-3.jpg" alt="완성품 포장" onerror="this.remove()"></div>
+    </div>
+    <div>
+      <div class="sec-head" style="text-align:left;margin-bottom:12px">
+        <span class="script">Group &amp; Visiting Class</span>
+        <h2>단체·출장 클래스</h2>
+      </div>
+      <p>재료·도구·오븐까지 쥬쥬쿠키가 준비해서 찾아갑니다.<br>장소만 있으면 어디서든 베이킹 교실이 열려요.</p>
+      <div class="targets">
+        <div class="target"><b>🏫 학교·유치원</b>방과후, 진로·체험 수업</div>
+        <div class="target"><b>🏢 기업·기관</b>워크숍, 팀빌딩, 복지 행사</div>
+        <div class="target"><b>🏘️ 마을·센터</b>주민자치, 복지관, 도서관</div>
+        <div class="target"><b>🎉 파티·행사</b>생일, 가족모임, 축제 부스</div>
+      </div>
+      <ol class="steps">
+        <li>DM 또는 전화로 날짜·인원·장소를 알려주세요.</li>
+        <li>대상과 예산에 맞는 메뉴와 견적을 안내드려요.</li>
+        <li>당일 쥬쥬쿠키가 재료를 챙겨 방문, 수업 후 정리까지!</li>
+      </ol>
+      <a href="#contact" class="btn btn-main">단체·출장 견적 문의</a>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 오시는 길 -->
+<section id="location">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">Location</span>
+      <h2>오시는 길</h2>
+      <div class="line"></div>
+    </div>
+    <div class="loc-grid">
+      <div class="map">
+        <iframe title="쥬쥬쿠키 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%20%EB%82%A8%EC%9B%90%EC%9D%8D%20%ED%83%9C%EC%8B%A0%EB%A1%9C%204&z=16&output=embed"></iframe>
+      </div>
+      <div class="info">
+        <dl>
+          <div><dt>📍 주소</dt><dd>제주특별자치도 서귀포시 남원읍 태신로 4<br>메르시안뷰 상가 1층</dd></div>
+          <div><dt>⏰ 운영</dt><dd>예약제로 운영돼요.<br>방문 전 꼭 DM·전화로 예약해 주세요.</dd></div>
+          <div><dt>🚗 주차</dt><dd>상가 주변 주차 가능 (자세한 안내는 예약 시 알려드려요)</dd></div>
+        </dl>
+        <div class="map-links">
+          <a class="btn btn-sub btn-sm" target="_blank" rel="noopener" href="https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%20%EB%82%A8%EC%9B%90%EC%9D%8D%20%ED%83%9C%EC%8B%A0%EB%A1%9C%204">네이버 지도</a>
+          <a class="btn btn-sub btn-sm" target="_blank" rel="noopener" href="https://map.kakao.com/?q=%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%20%EB%82%A8%EC%9B%90%EC%9D%8D%20%ED%83%9C%EC%8B%A0%EB%A1%9C%204">카카오맵</a>
+          <button class="btn btn-sub btn-sm" id="copyAddr">주소 복사</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 예약 문의 -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">Reservation</span>
+      <h2>예약 문의</h2>
+      <p>편한 방법으로 연락 주세요. 빠르게 답장드릴게요 💛</p>
+      <div class="line"></div>
+    </div>
+    <div class="contact-cards">
+      <a class="ccard js-insta" target="_blank" rel="noopener" href="#">
+        <div class="ico">💌</div>
+        <h3>인스타그램 DM</h3>
+        <p class="js-insta-id">@jujucookie_in_jeju</p>
+        <span class="go">DM 보내기</span>
+      </a>
+      <a class="ccard js-tel" href="#">
+        <div class="ico">📞</div>
+        <h3>전화 문의</h3>
+        <p class="js-phone">전화번호</p>
+        <span class="go">전화 걸기</span>
+      </a>
+    </div>
+    <div class="checklist">
+      <h3>📝 문의 시 알려주시면 더 빨라요</h3>
+      <ul>
+        <li>희망 날짜·시간</li>
+        <li>인원 (어린이/성인)</li>
+        <li>원하는 메뉴</li>
+        <li>단체·출장이라면 장소</li>
+      </ul>
+      <button class="btn btn-main btn-sm copy-btn" id="copyForm">문의 양식 복사해서 DM에 붙여넣기</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="logo"><span class="logo-dot">🍪</span>쥬쥬쿠키</div>
+  <p>베이킹으로 행복을 나누는 제주 베이킹 스튜디오</p>
+  <p>제주특별자치도 서귀포시 남원읍 태신로 4 메르시안뷰 상가 1층</p>
+  <p style="margin-top:10px">© <span id="year"></span> Juju Cookie</p>
+</footer>
+
+<div class="bottom-bar">
+  <a class="btn btn-sub js-tel" href="#">📞 전화</a>
+  <a class="btn btn-main js-insta" target="_blank" rel="noopener" href="#">💌 DM 예약</a>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== 여기만 수정하면 사이트 전체에 반영됩니다 ===== */
+const CONFIG = {
+  instagram: "jujucookie_in_jeju",
+  phone: "010-0000-0000",          // ← 실제 전화번호로 바꿔주세요
+  address: "제주특별자치도 서귀포시 남원읍 태신로 4 메르시안뷰 상가 1층"
+};
+
+/* 메뉴 데이터 — 메뉴 추가·가격 변경은 여기서. new: true 면 New 배지 */
+const MENU = [
+  { id:"cookie", name:"쿠키", desc:"내 손으로 만드는 고소함 가득 수제 쿠키", img:"images/menu/cookie.jpg", items:[
+    ["포켓몬스터 쿠키",15000],["산리오 쿠키",15000],["스누피 쿠키",15000],
+    ["촉촉한 초코칩쿠키 12개",30000],["르뱅쿠키 8개",35000],["초코스모어쿠키 8개",35000],
+    ["과자집",35000],["피스타치오쿠키",35000,true],["버터링쿠키",25000,true]]},
+  { id:"baked", name:"구움과자", desc:"버터 풍미 가득한 달콤한 시간", img:"images/menu/baked-goods.jpg", items:[
+    ["마들렌 12개",25000],["구움 도넛 10개",25000],["휘낭시에 12개",25000],
+    ["잼 스콘 8개",30000,true],["대파 체다치즈 스콘 8개",35000,true],["시나몬롤 스콘 8개",35000,true],
+    ["티그레 10개",30000,true],["티그레(말차/얼그레이) 10개",30000,true],["버터떡 12개",25000,true]]},
+  { id:"dessert", name:"디저트", desc:"버터 풍미 가득한 달콤한 시간", img:"images/menu/dessert.jpg", items:[
+    ["베이비슈",25000],["쿠키슈",30000],["생크림 오믈렛 10개",25000],
+    ["마카롱 20개",35000,true],["곰돌이 붓세 20개",35000],["브라우니 15개",35000],
+    ["요거트 마카롱 20개",35000],["초코 마카롱 20개",35000],["다쿠아즈 8개",35000,true]]},
+  { id:"bread", name:"빵", desc:"폭신폭신 쫄깃한 식감이 매력적인 빵", img:"images/menu/bread.jpg", items:[
+    ["미니핫도그&소세지빵",25000],["거북이빵",25000],["수박빵 (7·8월 한정)",25000],
+    ["팥빵 8개",25000,true],["소보로 8개",25000,true],["땅콩빵 8개",25000,true],
+    ["소금빵 6개",25000,true],["번(모카/초코) 6개",25000,true],["초코소라빵 8개",25000,true]]},
+  { id:"cake", name:"케이크", desc:"평범한 일상도 특별하게 만드는 수제 케이크", img:"images/menu/cake.jpg", items:[
+    ["미니 생크림 케이크",25000],["미니 바스크 치즈 케이크",30000],["미니 당근 케이크",30000,true],
+    ["미니 티라미수",35000,true],["미니 갸토 쇼콜라",35000,true],["바다 젤리 케이크",30000],
+    ["생크림 롤케이크",35000],["초코롤케이크",35000],["나가사키 카스테라",35000]]}
+];
+
+/* ===== 아래는 동작 코드 ===== */
+const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
+const won = n => n.toLocaleString("ko-KR") + "원";
+const instaUrl = "https://ig.me/m/" + CONFIG.instagram;
+$$(".js-insta").forEach(a => a.href = instaUrl);
+$$(".js-insta-id").forEach(e => e.textContent = "@" + CONFIG.instagram);
+$$(".js-tel").forEach(a => a.href = "tel:" + CONFIG.phone.replace(/[^0-9+]/g,""));
+$$(".js-phone").forEach(e => e.textContent = CONFIG.phone);
+$("#year").textContent = new Date().getFullYear();
+$(".sticker").innerHTML = "메뉴<br>" + MENU.reduce((n,c)=>n+c.items.length,0) + "가지";
+
+let current = MENU[0];
+function render(cat){
+  current = cat;
+  $$(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.id === cat.id));
+  $("#catDesc").textContent = cat.desc;
+  $("#items").innerHTML = cat.items.map(([n,p,isNew]) =>
+    `<div class="item"><span class="name">${n}${isNew?'<span class="new">New!</span>':''}</span><span class="price">${won(p)}</span></div>`).join("");
+}
+$("#tabs").innerHTML = MENU.map(c => `<button class="tab" role="tab" data-id="${c.id}">${c.name}</button>`).join("");
+$$(".tab").forEach(t => t.onclick = () => render(MENU.find(c => c.id === t.dataset.id)));
+render(current);
+
+$("#viewMenu").onclick = () => { $("#menuImg").src = current.img; $("#menuImg").alt = current.name + " 메뉴판"; $("#menuDialog").showModal(); };
+$("#menuDialog").addEventListener("click", e => { if (e.target.id === "menuDialog") e.target.close(); });
+
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),1800); }
+async function copy(text, msg){
+  try { await navigator.clipboard.writeText(text); toast(msg); }
+  catch { prompt("아래 내용을 복사해 주세요", text); }
+}
+$("#copyAddr").onclick = () => copy(CONFIG.address, "주소가 복사됐어요 📍");
+$("#copyForm").onclick = () => copy(
+`[쥬쥬쿠키 클래스 문의]
+- 희망 날짜·시간:
+- 인원 (어린이/성인):
+- 원하는 메뉴:
+- 클래스 종류 (원데이/단체/출장):
+- 장소 (출장 시):`, "양식이 복사됐어요! DM에 붙여넣어 주세요 💌");
+</script>
+</body>
+</html>
