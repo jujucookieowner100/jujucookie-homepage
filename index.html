@@ -66,7 +66,7 @@
   .hero .script{font-size:1.6rem;margin-bottom:14px}
   .hero p.lead{font-size:1.08rem;color:var(--muted);margin-bottom:26px}
   .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-  .hero-photo{aspect-ratio:4/5;border:8px solid var(--white);box-shadow:var(--shadow);transform:rotate(2deg)}
+  .hero-photo{aspect-ratio:4/3;border:8px solid var(--white);box-shadow:var(--shadow);transform:rotate(2deg)}
   .hero-photo-wrap{position:relative}
   .sticker{position:absolute;z-index:2;background:var(--yellow);color:var(--brown);font-family:"Jua";width:96px;height:96px;border-radius:50%;display:grid;place-items:center;text-align:center;line-height:1.2;font-size:.95rem;box-shadow:var(--shadow);left:-18px;bottom:24px;transform:rotate(-10deg);border:3px dashed var(--white);outline:3px solid var(--yellow)}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
@@ -74,8 +74,8 @@
   @media(max-width:760px){
     .hero{padding:28px 0 48px}
     .hero-grid{grid-template-columns:1fr;gap:28px}
-    .hero-photo-wrap{order:-1;max-width:340px;margin:0 auto;width:86%}
-    .hero-photo{aspect-ratio:1/1}
+    .hero-photo-wrap{order:-1;max-width:420px;margin:0 auto;width:94%}
+    .hero-photo{aspect-ratio:4/3}
     .hero-btns .btn{flex:1}
   }
 
@@ -146,6 +146,21 @@
   .info dd{color:var(--muted)}
   .map-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
   @media(max-width:860px){.loc-grid{grid-template-columns:1fr}}
+  .park{margin-top:28px}
+  .park h3{font-size:1.4rem;text-align:center;margin-bottom:16px}
+  .park-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:820px;margin:0 auto}
+  .pcard{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .pcard .ph{aspect-ratio:4/3;border-radius:0}
+  .pcard-body{padding:16px 18px 20px}
+  .pcard .num{display:inline-block;font-family:"Jua";font-size:.85rem;background:var(--yellow);color:var(--brown);padding:2px 10px;border-radius:999px;margin-bottom:6px}
+  .pcard h4{font-family:"Jua";font-weight:400;font-size:1.15rem;color:var(--brown);margin-bottom:4px}
+  .pcard p{font-size:.95rem;color:var(--muted)}
+  .pcard.warn{border:3px solid #E0662B}
+  .pcard.warn .num{background:#E0662B;color:#fff}
+  .pcard.warn h4{color:#C2410C}
+  .park-note{text-align:center;margin-top:16px;font-size:.92rem;color:var(--muted)}
+  .park-note a{color:var(--cocoa);text-decoration:underline}
+  @media(max-width:860px){.park-grid{grid-template-columns:1fr}.pcard .ph{aspect-ratio:16/10}}
 
   /* contact */
   .contact{background:linear-gradient(180deg,var(--cream),var(--butter))}
@@ -215,8 +230,8 @@
     </div>
     <div class="hero-photo-wrap">
       <!-- 사진 교체: images/hero.jpg 파일을 올리면 자동으로 바뀝니다 -->
-      <div class="ph hero-photo" data-emoji="🍪" data-label="대표 사진 (images/hero.jpg)">
-        <img src="images/hero.jpg" alt="쥬쥬쿠키 베이킹 클래스" onerror="this.remove()">
+      <div class="ph hero-photo" data-emoji="🍪" data-label="">
+        <img src="images/hero.jpg" alt="쥬쥬쿠키 매장 외관" onerror="this.remove()">
       </div>
       <div class="sticker">메뉴<br>45가지+</div>
     </div>
@@ -336,7 +351,8 @@
         <dl>
           <div><dt>📍 주소</dt><dd>제주특별자치도 서귀포시 남원읍 태신로 4<br>메르시안뷰 상가 1층</dd></div>
           <div><dt>⏰ 운영시간</dt><dd><b style="color:var(--brown)">매일 11:00 ~ 18:00</b> · 월요일 휴무<br>클래스는 예약제예요. 방문 전 DM·전화로 예약해 주세요.</dd></div>
-          <div><dt>🚗 주차</dt><dd>오시기 전에 주차 안내를 꼭 확인해 주세요.<br><a href="https://blog.naver.com/jujucookie/224323926034" target="_blank" rel="noopener" style="color:var(--cocoa);text-decoration:underline">📖 사진으로 보는 주차 안내 (블로그)</a></dd></div>
+          <div><dt>🧭 찾아오는 길</dt><dd>서귀포 → 표선 방향 도로변, 태흥초등학교·농협·새마을금고·<b>CU</b>를 지나면 바로 맞은편 빌라 건물 1층이에요. 도로변에서 간판이 보여요.</dd></div>
+          <div><dt>🚗 주차</dt><dd>무료로 편하게 주차하실 수 있어요. 아래 주차 안내를 확인해 주세요 👇</dd></div>
         </dl>
         <div class="map-links">
           <a class="btn btn-sub btn-sm" target="_blank" rel="noopener" href="https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%20%EB%82%A8%EC%9B%90%EC%9D%8D%20%ED%83%9C%EC%8B%A0%EB%A1%9C%204">네이버 지도</a>
@@ -344,6 +360,45 @@
           <button class="btn btn-sub btn-sm" id="copyAddr">주소 복사</button>
         </div>
       </div>
+    </div>
+
+    <div class="park">
+      <h3>🚗 주차 안내</h3>
+      <div class="park-grid">
+        <article class="pcard">
+          <div class="ph" data-emoji="🏪" data-label="images/parking-way.jpg"><img src="images/parking-way.jpg" alt="CU 앞 좌회전 지점" loading="lazy" onerror="this.remove()"></div>
+          <div class="pcard-body">
+            <span class="num">길 안내</span>
+            <h4>CU가 보이면 좌회전!</h4>
+            <p>표선 방향 도로변에서 CU 편의점이 보이면 좌회전하세요. 오른쪽 분홍빛 빌라 건물이 메르시안뷰예요.</p>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="ph" data-emoji="🅿️" data-label="images/parking-lot.jpg"><img src="images/parking-lot.jpg" alt="태흥 메르시안뷰 1층 주차장" loading="lazy" onerror="this.remove()"></div>
+          <div class="pcard-body">
+            <span class="num">주차 ①</span>
+            <h4>메르시안뷰 건물 1층 주차장</h4>
+            <p>좌회전 후 오른쪽 빌라 건물(태흥 메르시안뷰) 1층에 주차하세요. 상가 전용 자리 외에도 주차 가능해요.</p>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="ph" data-emoji="🅿️" data-label="images/parking-2.jpg"><img src="images/parking-2.jpg" alt="폴개촌 옆 주차공간" loading="lazy" onerror="this.remove()"></div>
+          <div class="pcard-body">
+            <span class="num">주차 ②</span>
+            <h4>폴개촌 옆 넓은 주차공간</h4>
+            <p>CU에서 조금 더 직진해 폴개촌에서 좌회전하면 넓은 주차공간이 또 있어요. 어디든 편하게 주차하세요 ^^</p>
+          </div>
+        </article>
+        <article class="pcard warn">
+          <div class="ph" data-emoji="🚫" data-label="images/no-parking.jpg"><img src="images/no-parking.jpg" alt="주차 금지 구역" loading="lazy" onerror="this.remove()"></div>
+          <div class="pcard-body">
+            <span class="num">꼭 확인!</span>
+            <h4>🚫 주차 절대 금지 구역</h4>
+            <p>도로변에서 쥬쥬쿠키 <b>대각선 맞은편 집 앞</b>은 개인 주택이에요. 이곳에는 절대 주차하지 말아 주세요.</p>
+          </div>
+        </article>
+      </div>
+      <p class="park-note">사진과 지도로 자세히 보기 → <a href="https://blog.naver.com/jujucookie/224323926034" target="_blank" rel="noopener">주차 안내 블로그 글</a></p>
     </div>
   </div>
 </section>
