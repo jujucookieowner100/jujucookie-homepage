@@ -158,6 +158,7 @@
   .pcard.warn{border:3px solid #E0662B}
   .pcard.warn .num{background:#E0662B;color:#fff}
   .pcard.warn h4{color:#C2410C}
+  .no-label{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-4deg);background:#E0662B;color:#fff;font-family:"Jua";font-size:1.2rem;padding:8px 16px;border-radius:12px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.25);white-space:nowrap}
   .park-note{text-align:center;margin-top:16px;font-size:.92rem;color:var(--muted)}
   .park-note a{color:var(--cocoa);text-decoration:underline}
   @media(max-width:860px){.park-grid{grid-template-columns:1fr}.pcard .ph{aspect-ratio:16/10}}
@@ -390,7 +391,7 @@
           </div>
         </article>
         <article class="pcard warn">
-          <div class="ph" data-emoji="🚫" data-label="images/no-parking.jpg"><img src="images/no-parking.jpg" alt="주차 금지 구역" loading="lazy" onerror="this.remove()"></div>
+          <div class="ph" data-emoji="🚫" data-label="images/no-parking.jpg"><img src="images/no-parking.jpg" alt="주차 금지 구역" loading="lazy" onerror="this.remove()"><span class="no-label">🚫 주차 절대 금지</span></div>
           <div class="pcard-body">
             <span class="num">꼭 확인!</span>
             <h4>🚫 주차 절대 금지 구역</h4>
